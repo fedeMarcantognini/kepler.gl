@@ -68,6 +68,8 @@ import {hexToRgb, getColorGroupByName, reverseColorRange} from 'utils/color-util
  * Approx. number of points to sample in a large data set
  * @type {number}
  */
+export const LAYER_ID_LENGTH = 6;
+
 const MAX_SAMPLE_SIZE = 5000;
 const defaultDomain = [0, 1];
 const dataFilterExtension = new DataFilterExtension({filterSize: MAX_GPU_FILTERS});
@@ -95,7 +97,7 @@ const defaultGetFieldValue = (field, d) => d[field.tableFieldIndex - 1];
 
 export default class Layer {
   constructor(props = {}) {
-    this.id = props.id || generateHashId(6);
+    this.id = props.id || generateHashId(LAYER_ID_LENGTH);
 
     // meta
     this.meta = {};

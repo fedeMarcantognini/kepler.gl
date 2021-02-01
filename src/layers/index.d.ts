@@ -108,3 +108,4 @@ export type LayerClassesType = {
   s2: Layer;
 };
 export const LayerClasses: LayerClassesType;
+export const LAYER_ID_LENGTH: number;
